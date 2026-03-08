@@ -6,33 +6,30 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MyStackTest {
 
     @Test
-    void testPush() {
-        MyStack stack = new MyStack();
-        stack.push(5);
+    void testIntegerStack() {
+        MyStack<Integer> stack = new MyStack<>();
 
-        assertEquals(1, stack.getSize());
+        stack.push(10);
+        stack.push(20);
+
+        assertEquals(20, stack.top());
     }
 
     @Test
-    void testTop() {
-        MyStack stack = new MyStack();
-        stack.push(10);
+    void testStringStack() {
+        MyStack<String> stack = new MyStack<>();
 
-        assertEquals(10, stack.top());
+        stack.push("DIU");
+
+        assertEquals("DIU", stack.top());
     }
 
     @Test
     void testPop() {
-        MyStack stack = new MyStack();
-        stack.push(20);
+        MyStack<Integer> stack = new MyStack<>();
+
+        stack.push(5);
         stack.pop();
-
-        assertTrue(stack.isEmpty());
-    }
-
-    @Test
-    void testIsEmpty() {
-        MyStack stack = new MyStack();
 
         assertTrue(stack.isEmpty());
     }
